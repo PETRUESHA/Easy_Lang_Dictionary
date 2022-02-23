@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/fragment_profile"
-        android:name="com.example.easy_lang_dictionary.fragment_profile"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/fragment_search"
-        android:name="com.example.easy_lang_dictionary.fragment_search"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_search"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/fragment_dictionary"
-        android:name="com.example.easy_lang_dictionary.fragment_dictionary"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_dictionary"
         android:label="fragment_dictionary"
         tools:layout="@layout/fragment_dictionary" />
     <fragment
         android:id="@+id/fragment_parser"
-        android:name="com.example.easy_lang_dictionary.fragment_parser"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_parser"
         android:label="fragment_parser"
         tools:layout="@layout/fragment_parser" />
     <fragment
         android:id="@+id/fragment_translator"
-        android:name="com.example.easy_lang_dictionary.fragment_translator"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_translator"
         android:label="fragment_translator"
         tools:layout="@layout/fragment_translator" />
 </navigation>

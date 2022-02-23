@@ -13,7 +13,9 @@
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_end="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -25,7 +27,7 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="130dp"
         android:background="@color/pink"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,20 +35,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="411dp"
-        android:layout_height="528dp"
+        android:layout_width="match_parent"
+        android:layout_height="691dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:navGraph="@navigation/first_activity_graph" />
-
+        app:navGraph="@navigation/first_activity_graph"
+        tools:layout_editor_absoluteY="130dp"
+        tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/view2"
@@ -100,8 +98,6 @@
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2"
         app:srcCompat="@drawable/profile_title_icon" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

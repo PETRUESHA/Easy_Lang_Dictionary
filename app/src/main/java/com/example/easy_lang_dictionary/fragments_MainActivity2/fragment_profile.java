@@ -1,4 +1,4 @@
-package com.example.easy_lang_dictionary;
+package com.example.easy_lang_dictionary.fragments_MainActivity2;
 
 import android.os.Bundle;
 
@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class fragment_dictionary extends Fragment {
+import com.example.easy_lang_dictionary.R;
+
+public class fragment_profile extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -16,12 +18,12 @@ public class fragment_dictionary extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_dictionary() {
+    public fragment_profile() {
         // Required empty public constructor
     }
 
-    public static fragment_dictionary newInstance(String param1, String param2) {
-        fragment_dictionary fragment = new fragment_dictionary();
+    public static fragment_profile newInstance(String param1, String param2) {
+        fragment_profile fragment = new fragment_profile();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -42,6 +44,6 @@ public class fragment_dictionary extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dictionary, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 }

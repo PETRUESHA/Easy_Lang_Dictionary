@@ -1,4 +1,4 @@
-package com.example.easy_lang_dictionary;
+package com.example.easy_lang_dictionary.fragments_MainActivity2;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.easy_lang_dictionary.R;
 
 public class fragment_translator extends Fragment {
 

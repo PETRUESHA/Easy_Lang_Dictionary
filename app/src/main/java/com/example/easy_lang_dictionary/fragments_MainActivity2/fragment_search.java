@@ -1,4 +1,4 @@
-package com.example.easy_lang_dictionary;
+package com.example.easy_lang_dictionary.fragments_MainActivity2;
 
 import android.os.Bundle;
 
@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class NewProfile extends Fragment {
+import com.example.easy_lang_dictionary.R;
+
+public class fragment_search extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -16,12 +18,12 @@ public class NewProfile extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public NewProfile() {
+    public fragment_search() {
         // Required empty public constructor
     }
 
-    public static NewProfile newInstance(String param1, String param2) {
-        NewProfile fragment = new NewProfile();
+    public static fragment_search newInstance(String param1, String param2) {
+        fragment_search fragment = new fragment_search();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -42,6 +44,6 @@ public class NewProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_profile, container, false);
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
 }

@@ -11,4 +11,8 @@
     <color name="title">#1d1d1d</color>
     <color name="pink">#ffc8c9</color>
     <color name="subTitle">#383838</color>
+    <color name="p">#313131</color>
+    <color name="text_fields">#FFE2E3</color>
+    <color name="title2">#383838</color>
+    
 </resources>

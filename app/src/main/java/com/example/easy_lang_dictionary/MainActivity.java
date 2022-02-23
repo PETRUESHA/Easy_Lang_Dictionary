@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);   // WTF!!!!!!!!!!
-        assert navHostFragment != null;                                                                                             // WTF!!!!!!!!!!
-        navController = navHostFragment.getNavController();                                                                         // WTF!!!!!!!!!!
-        // TextViews from home fragment don't shows
+        final NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        if (navHostFragment != null) {
+            navController = navHostFragment.getNavController();
+        }
     }
 }
