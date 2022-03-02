@@ -14,5 +14,6 @@
     <color name="p">#313131</color>
     <color name="text_fields">#FFE2E3</color>
     <color name="title2">#383838</color>
-    
+    <color name="buttons">#FF4449</color>
+
 </resources>

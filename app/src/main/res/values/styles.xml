@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="b18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/subTitle</item>
+    </style>
+
+    <style name="bi14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/p</item>
+    </style>
+
+    <style name="bi24">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:text">@string/title</item>
+    </style>
+
+    <style name="r13">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/p</item>
+    </style>
+
+    <style name="r9">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/p</item>
+    </style>
+</resources>

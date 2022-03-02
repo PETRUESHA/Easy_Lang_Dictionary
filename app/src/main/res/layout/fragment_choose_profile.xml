@@ -11,8 +11,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="363dp"
         android:layout_height="774dp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -31,6 +33,17 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_begin="386dp" />
+
+    <View
+        android:id="@+id/fab_2_exten"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/add_new_button"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
