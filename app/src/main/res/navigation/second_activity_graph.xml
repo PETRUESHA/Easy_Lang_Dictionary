@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/second_activity_graph"
-    app:startDestination="@id/fragment_profile">
+    app:startDestination="@id/fragment_edit_profile">
 
     <fragment
         android:id="@+id/fragment_profile"
@@ -30,4 +30,9 @@
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_translator"
         android:label="fragment_translator"
         tools:layout="@layout/fragment_translator" />
+    <fragment
+        android:id="@+id/fragment_edit_profile"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.fragment_edit_profile"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
 </navigation>

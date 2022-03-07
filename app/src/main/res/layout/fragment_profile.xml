@@ -9,6 +9,7 @@
     tools:context=".fragments_MainActivity2.fragment_profile">
 
 
+
     <View
         android:id="@+id/group_36"
         android:layout_width="370dp"
@@ -159,6 +160,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
+
+
     <View
         android:id="@+id/group_39"
         android:layout_width="100dp"
@@ -208,6 +211,72 @@
         android:background="@drawable/rectangle_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/group_32" />
+
+    <TextView
+        android:id="@+id/textView22"
+        style="@style/r18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surname1"
+        app:layout_constraintBottom_toBottomOf="@+id/group_41"
+        app:layout_constraintEnd_toEndOf="@+id/group_41"
+        app:layout_constraintStart_toStartOf="@+id/group_35"
+        app:layout_constraintTop_toTopOf="@+id/group_41" />
+
+    <TextView
+        android:id="@+id/textView21"
+        style="@style/r18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name1"
+        app:layout_constraintBottom_toBottomOf="@+id/group_38"
+        app:layout_constraintEnd_toEndOf="@+id/group_38"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toTopOf="@+id/group_38" />
+
+    <TextView
+        android:id="@+id/textView24"
+        style="@style/r18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email1"
+        app:layout_constraintBottom_toBottomOf="@+id/group_37"
+        app:layout_constraintEnd_toEndOf="@+id/group_37"
+        app:layout_constraintStart_toStartOf="@+id/group_32"
+        app:layout_constraintTop_toTopOf="@+id/group_37" />
+
+    <TextView
+        android:id="@+id/textView25"
+        style="@style/r18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level"
+        app:layout_constraintBottom_toBottomOf="@+id/group_39"
+        app:layout_constraintEnd_toEndOf="@+id/group_39"
+        app:layout_constraintStart_toStartOf="@+id/group_36"
+        app:layout_constraintTop_toTopOf="@+id/group_39" />
+
+    <TextView
+        android:id="@+id/textView26"
+        style="@style/r18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language1"
+        app:layout_constraintBottom_toBottomOf="@+id/group_40"
+        app:layout_constraintEnd_toEndOf="@+id/group_40"
+        app:layout_constraintStart_toStartOf="@+id/group_33"
+        app:layout_constraintTop_toTopOf="@+id/group_40" />
+
+    <TextView
+        android:id="@+id/textView27"
+        style="@style/r18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password1"
+        app:layout_constraintBottom_toBottomOf="@+id/group_43"
+        app:layout_constraintEnd_toEndOf="@+id/group_43"
+        app:layout_constraintStart_toStartOf="@+id/group_34"
+        app:layout_constraintTop_toTopOf="@+id/group_43" />
 
 
     <!-- Group 2 -->

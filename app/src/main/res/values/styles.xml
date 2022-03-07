@@ -30,4 +30,16 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/p</item>
     </style>
+
+    <style name="r18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/title2</item>
+    </style>
+
+    <style name="r16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/title2</item>
+    </style>
 </resources>
