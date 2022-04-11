@@ -11,8 +11,9 @@
         android:id="@+id/recyclerView"
         android:layout_width="363dp"
         android:layout_height="774dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,13 +36,24 @@
         app:layout_constraintGuide_begin="386dp" />
 
     <View
-        android:id="@+id/fab_2_exten"
+        android:id="@+id/nav_to_newProf"
         android:layout_width="154dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="212dp"
         android:background="@drawable/button_1"
         android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/button_1"
+        android:text="@string/add_new"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline9" />
 

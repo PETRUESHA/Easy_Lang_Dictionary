@@ -29,4 +29,5 @@
     <string name="language1">Language</string>
     <string name="level">Level</string>
     <string name="easylang_dictionary">EasyLang\nDictionary</string>
+    <string name="add_new">Add new</string>
 </resources>

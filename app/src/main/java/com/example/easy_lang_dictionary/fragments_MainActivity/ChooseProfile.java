@@ -3,6 +3,10 @@ package com.example.easy_lang_dictionary.fragments_MainActivity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,20 +14,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.Button;
 
 import com.example.easy_lang_dictionary.R;
 import com.example.easy_lang_dictionary.adapters.ChooseProfileAdapter;
 import com.example.easy_lang_dictionary.databinding.FragmentChooseProfileBinding;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ChooseProfile extends Fragment {
 
     private FragmentChooseProfileBinding binding;
+    private NavController navController;
 
     public ChooseProfile() {
-        // Required empty public constructor
     }
 
     @Override
@@ -35,8 +41,14 @@ public class ChooseProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentChooseProfileBinding.inflate(getLayoutInflater());
         initViews();
-
-
+        Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.nav_host_fragment);
+        Button navigation_to_newProf = binding.button;
+        navigation_to_newProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_chooseProfile_to_newProfile);
+            }
+        });
 
 
         return inflater.inflate(R.layout.fragment_choose_profile, container, false);
