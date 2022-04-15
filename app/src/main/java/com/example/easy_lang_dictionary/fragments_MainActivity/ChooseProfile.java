@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.Button;
 
+import com.example.easy_lang_dictionary.MainActivity;
 import com.example.easy_lang_dictionary.R;
 import com.example.easy_lang_dictionary.adapters.ChooseProfileAdapter;
 import com.example.easy_lang_dictionary.databinding.FragmentChooseProfileBinding;
@@ -41,7 +42,7 @@ public class ChooseProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentChooseProfileBinding.inflate(getLayoutInflater());
         initViews();
-        Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.nav_host_fragment);
+        navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.nav_host_fragment);
         Button navigation_to_newProf = binding.button;
         navigation_to_newProf.setOnClickListener(new View.OnClickListener() {
             @Override

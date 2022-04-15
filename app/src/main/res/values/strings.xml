@@ -30,4 +30,10 @@
     <string name="level">Level</string>
     <string name="easylang_dictionary">EasyLang\nDictionary</string>
     <string name="add_new">Add new</string>
+    <string name="translator">Translator</string>
+    <string name="parser">Parser</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="create_new">Create new</string>
 </resources>

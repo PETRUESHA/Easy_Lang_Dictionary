@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_translator"
+        android:title="@string/translator"
+        />
+    <item
+        android:id="@+id/navigation_parser"
+        android:title="@string/parser" />
+    <item
+        android:id="@+id/navigation_dictionary"
+        android:title="@string/dictionary" />
+    <item
+        android:id="@+id/navigation_search"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:title="@string/profile" />
+</menu>
