@@ -11,15 +11,15 @@ import android.view.ViewGroup;
 import com.example.easy_lang_dictionary.R;
 
 
-public class fragment_edit_profile extends Fragment {
+public class EditProfileFragment extends Fragment {
 
 
-    public fragment_edit_profile() {
+    public EditProfileFragment() {
 
     }
 
-    public static fragment_edit_profile newInstance(String param1, String param2) {
-        fragment_edit_profile fragment = new fragment_edit_profile();
+    public static EditProfileFragment newInstance(String param1, String param2) {
+        EditProfileFragment fragment = new EditProfileFragment();
         Bundle args = new Bundle();
         return fragment;
     }

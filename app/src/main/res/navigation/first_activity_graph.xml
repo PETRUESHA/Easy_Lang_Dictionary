@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/chooseProfile"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.ChooseProfile"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.ChooseProfileFragment"
         android:label="fragment_choose_profile"
         tools:layout="@layout/fragment_choose_profile" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/newProfile"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.NewProfile"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.NewProfileFragment"
         android:label="fragment_new_profile"
         tools:layout="@layout/fragment_new_profile" />
     <activity

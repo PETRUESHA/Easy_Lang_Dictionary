@@ -25,12 +25,12 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class ChooseProfile extends Fragment {
+public class ChooseProfileFragment extends Fragment {
 
     private FragmentChooseProfileBinding binding;
     private NavController navController;
 
-    public ChooseProfile() {
+    public ChooseProfileFragment() {
     }
 
     @Override

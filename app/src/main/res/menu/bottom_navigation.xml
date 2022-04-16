@@ -5,17 +5,22 @@
     <item
         android:id="@+id/navigation_translator"
         android:title="@string/translator"
+        android:icon="@drawable/translate_icon"
         />
     <item
         android:id="@+id/navigation_parser"
-        android:title="@string/parser" />
+        android:title="@string/parser"
+        android:icon="@drawable/parser_icon"/>
     <item
         android:id="@+id/navigation_dictionary"
-        android:title="@string/dictionary" />
+        android:title="@string/dictionary"
+        android:icon="@drawable/dictionary_icon"/>
     <item
         android:id="@+id/navigation_search"
-        android:title="@string/search" />
+        android:title="@string/search"
+        android:icon="@drawable/loupe_icon"/>
     <item
         android:id="@+id/navigation_profile"
-        android:title="@string/profile" />
+        android:title="@string/profile"
+        android:icon="@drawable/profile_icon"/>
 </menu>

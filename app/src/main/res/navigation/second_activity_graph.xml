@@ -7,32 +7,32 @@
 
     <fragment
         android:id="@+id/fragment_profile"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_profile"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/fragment_search"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_search"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/fragment_dictionary"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_dictionary"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.DictionaryFragment"
         android:label="fragment_dictionary"
         tools:layout="@layout/fragment_dictionary" />
     <fragment
         android:id="@+id/fragment_parser"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_parser"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.ParserFragment"
         android:label="fragment_parser"
         tools:layout="@layout/fragment_parser" />
     <fragment
         android:id="@+id/fragment_translator"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.fragment_translator"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.TranslatorFragment"
         android:label="fragment_translator"
         tools:layout="@layout/fragment_translator" />
     <fragment
         android:id="@+id/fragment_edit_profile"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.fragment_edit_profile"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <activity
