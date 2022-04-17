@@ -167,8 +167,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck"
-        tools:src="@drawable/image_4" />
+        app:srcCompat="@drawable/image_4"
+        tools:ignore="ImageContrastCheck" />
 
     <View
         android:id="@+id/view2"

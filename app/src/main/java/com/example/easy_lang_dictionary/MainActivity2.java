@@ -34,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
         }
 
         bottomNavigationView = binding.bottomNavigationView;
-        bottomNavigationView.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+        // bottomNavigationView.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
         ProfileFragment profileFragment = new ProfileFragment();

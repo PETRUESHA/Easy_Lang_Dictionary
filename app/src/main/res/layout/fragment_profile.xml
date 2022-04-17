@@ -44,8 +44,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_4"
         tools:ignore="ImageContrastCheck"
-        tools:src="@drawable/image_4" />
+        />
 
     <View
         android:id="@+id/group_32"

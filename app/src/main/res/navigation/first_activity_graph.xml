@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/first_activity_graph"
-    app:startDestination="@id/chooseProfile">
+    app:startDestination="@id/newProfile">
 
     <fragment
         android:id="@+id/chooseProfile"
