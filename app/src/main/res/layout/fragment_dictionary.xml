@@ -7,13 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".fragments_MainActivity2.DictionaryFragment">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/buttons"
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_1"
+
         android:text="@string/create_new"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

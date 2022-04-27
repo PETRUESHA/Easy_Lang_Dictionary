@@ -170,12 +170,15 @@
         app:srcCompat="@drawable/image_4"
         tools:ignore="ImageContrastCheck" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/buttons"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_gravity="right"
         android:layout_marginTop="35dp"
         android:background="@drawable/button_1"
+        android:text="@string/confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -197,10 +200,10 @@
 
     <TextView
         android:id="@+id/textView2"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name1"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_10"
         app:layout_constraintEnd_toEndOf="@+id/group_10"
         app:layout_constraintStart_toStartOf="@+id/rectangle_6"
@@ -208,10 +211,10 @@
 
     <TextView
         android:id="@+id/textView15"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/surname1"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_13"
         app:layout_constraintEnd_toEndOf="@+id/group_13"
         app:layout_constraintStart_toStartOf="@+id/rectangle_7"
@@ -219,10 +222,10 @@
 
     <TextView
         android:id="@+id/textView16"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email1"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_12"
         app:layout_constraintEnd_toEndOf="@+id/group_12"
         app:layout_constraintStart_toStartOf="@+id/rectangle_"
@@ -230,10 +233,10 @@
 
     <TextView
         android:id="@+id/textView17"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/protection"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_11"
         app:layout_constraintEnd_toEndOf="@+id/group_11"
         app:layout_constraintStart_toStartOf="@+id/rectangle_2"
@@ -241,10 +244,10 @@
 
     <TextView
         android:id="@+id/textView18"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password1"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_14"
         app:layout_constraintEnd_toEndOf="@+id/group_14"
         app:layout_constraintStart_toStartOf="@+id/rectangle_4"
@@ -252,10 +255,10 @@
 
     <TextView
         android:id="@+id/textView19"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/language1"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_15"
         app:layout_constraintEnd_toEndOf="@+id/group_15"
         app:layout_constraintStart_toStartOf="@+id/rectangle_5"
@@ -263,10 +266,10 @@
 
     <TextView
         android:id="@+id/textView20"
+        style="@style/r18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/level"
-        style="@style/r18"
         app:layout_constraintBottom_toBottomOf="@+id/group_16"
         app:layout_constraintEnd_toEndOf="@+id/group_16"
         app:layout_constraintStart_toStartOf="@+id/rectangle_8"

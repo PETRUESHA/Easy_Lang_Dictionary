@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="b18">
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
@@ -25,6 +26,12 @@
         <item name="android:textColor">@color/p</item>
     </style>
 
+    <style name="hint18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/subTitle</item>
+    </style>
+
     <style name="r9">
         <item name="android:textSize">9sp</item>
         <item name="android:textStyle">normal</item>
@@ -41,5 +48,11 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/title2</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.09</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 </resources>
