@@ -241,6 +241,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/buttons"
+                android:id="@+id/confirmButton"
                 android:layout_width="150dp"
                 android:layout_height="35dp"
                 android:layout_gravity="right"

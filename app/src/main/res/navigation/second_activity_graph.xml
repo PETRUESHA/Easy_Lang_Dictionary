@@ -9,7 +9,14 @@
         android:id="@+id/fragment_profile"
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_fragment_profile_to_fragment_edit_profile"
+            app:destination="@id/fragment_edit_profile" />
+        <action
+            android:id="@+id/action_fragment_profile_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_search"
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.SearchFragment"
@@ -34,7 +41,11 @@
         android:id="@+id/fragment_edit_profile"
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity.EditProfileFragment"
         android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" />
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_fragment_edit_profile_to_fragment_profile"
+            app:destination="@id/fragment_profile" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.easy_lang_dictionary.MainActivity"

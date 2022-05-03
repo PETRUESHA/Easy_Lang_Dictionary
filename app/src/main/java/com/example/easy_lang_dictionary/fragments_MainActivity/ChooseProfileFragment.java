@@ -40,9 +40,11 @@ public class ChooseProfileFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentChooseProfileBinding.inflate(getLayoutInflater());
+        binding = FragmentChooseProfileBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
         initViews();
-        navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.nav_host_fragment);
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
         Button navigation_to_newProf = binding.button;
         navigation_to_newProf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,9 +52,7 @@ public class ChooseProfileFragment extends Fragment {
                 navController.navigate(R.id.action_chooseProfile_to_newProfile);
             }
         });
-
-
-        return inflater.inflate(R.layout.fragment_choose_profile, container, false);
+        return view;
     }
 
     public void initViews() {

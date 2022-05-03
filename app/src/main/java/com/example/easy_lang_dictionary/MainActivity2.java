@@ -18,7 +18,7 @@ import com.example.easy_lang_dictionary.fragments_MainActivity2.TranslatorFragme
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class MainActivity2 extends AppCompatActivity {
     private ActivityMain2Binding binding;
     private NavController navController;
     private BottomNavigationView bottomNavigationView;
@@ -34,37 +34,38 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
         }
 
         bottomNavigationView = binding.bottomNavigationView;
-        // bottomNavigationView.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_profile:
+                        navController.navigate(R.id.fragment_profile);
+                        return true;
+                    case R.id.navigation_search:
+                        navController.navigate(R.id.fragment_search);
+                        return true;
+                    case R.id.navigation_dictionary:
+                        navController.navigate(R.id.fragment_dictionary);
+                        return true;
+                    case R.id.navigation_parser:
+                        navController.navigate(R.id.fragment_parser);
+                        return true;
+                    case R.id.navigation_translator:
+                        navController.navigate(R.id.fragment_translator);
+                        return true;
+                    default: return true;
+                }
+            }
+        });
         bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
-        ProfileFragment profileFragment = new ProfileFragment();
+        /* ProfileFragment profileFragment = new ProfileFragment();
         SearchFragment searchFragment = new SearchFragment();
-        DictionaryFragment dictionaryFragment = new DictionaryFragment();
+        DictionaryFragment dictionaryFragment = new DictionaryFragment();                # For future
         ParserFragment parserFragment = new ParserFragment();
         TranslatorFragment translatorFragment = new TranslatorFragment();
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.navigation_profile:
-                navController.navigate(R.id.fragment_profile);
-                return true;
-            case R.id.navigation_search:
-                navController.navigate(R.id.fragment_search);
-                return true;
-            case R.id.navigation_dictionary:
-                navController.navigate(R.id.fragment_dictionary);
-                return true;
-            case R.id.navigation_parser:
-                navController.navigate(R.id.fragment_parser);
-                return true;
-            case R.id.navigation_translator:
-                navController.navigate(R.id.fragment_translator);
-                return true;
-        }
-     return false;
+         */
     }
 }

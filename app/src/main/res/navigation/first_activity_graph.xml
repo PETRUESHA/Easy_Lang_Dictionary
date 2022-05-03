@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/first_activity_graph"
-    app:startDestination="@id/newProfile">
+    app:startDestination="@id/chooseProfile">
 
     <fragment
         android:id="@+id/chooseProfile"
@@ -18,7 +18,11 @@
         android:id="@+id/newProfile"
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity.NewProfileFragment"
         android:label="fragment_new_profile"
-        tools:layout="@layout/fragment_new_profile" />
+        tools:layout="@layout/fragment_new_profile" >
+        <action
+            android:id="@+id/action_newProfile_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity2"
         android:name="com.example.easy_lang_dictionary.MainActivity2"
