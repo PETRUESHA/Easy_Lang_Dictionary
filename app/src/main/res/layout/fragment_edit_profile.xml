@@ -10,7 +10,7 @@
     <View
         android:id="@+id/rectangle_8"
         android:layout_width="370dp"
-        android:layout_height="40dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rectangle_1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +28,20 @@
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_6" />
+
+    <EditText
+        style="@style/r16"
+        android:id="@+id/editTextTextPersonName8"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:hint="Surname"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/title"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_7"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_7"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_7" />
 
     <View
         android:id="@+id/rectangle_6"
@@ -59,18 +73,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rectangle_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
-
-    <View
-        android:id="@+id/rectangle_2"
-        android:layout_width="370dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rectangle_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_" />
 
@@ -84,6 +87,36 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_7" />
+
+    <EditText
+        style="@style/r16"
+        android:id="@+id/editTextTextPersonName9"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Email"
+        android:textColorHint="@color/title"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_" />
+
+    <EditText
+        style="@style/r16"
+        android:id="@+id/editTextTextPersonName12"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="1dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Password"
+
+        android:textColorHint="@color/title"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_4" />
 
     <View
         android:id="@+id/group_10"
@@ -105,16 +138,6 @@
         android:background="@drawable/rectangle_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rectangle_7" />
-
-    <View
-        android:id="@+id/group_11"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/rectangle_4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
 
     <View
@@ -233,17 +256,6 @@
         app:layout_constraintTop_toTopOf="@+id/group_12" />
 
     <TextView
-        android:id="@+id/textView17"
-        style="@style/r18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/protection"
-        app:layout_constraintBottom_toBottomOf="@+id/group_11"
-        app:layout_constraintEnd_toEndOf="@+id/group_11"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
-        app:layout_constraintTop_toTopOf="@+id/group_11" />
-
-    <TextView
         android:id="@+id/textView18"
         style="@style/r18"
         android:layout_width="wrap_content"
@@ -275,4 +287,19 @@
         app:layout_constraintEnd_toEndOf="@+id/group_16"
         app:layout_constraintStart_toStartOf="@+id/rectangle_8"
         app:layout_constraintTop_toTopOf="@+id/group_16" />
+
+    <EditText
+        style="@style/r16"
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/title"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_6" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

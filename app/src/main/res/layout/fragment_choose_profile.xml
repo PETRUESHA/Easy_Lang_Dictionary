@@ -39,7 +39,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="154dp"
-        android:layout_height="50dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/button_1"
         android:text="@string/add_new"

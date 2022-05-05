@@ -71,14 +71,14 @@
                     app:layout_constraintVertical_bias="0.6" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/editTextTextName"
                     android:layout_width="305dp"
                     android:layout_height="40dp"
+                    android:backgroundTint="@android:color/transparent"
                     android:ems="10"
+                    android:hint="@string/enter_your_name"
                     android:inputType="textCapWords"
                     android:textColorHighlight="@color/subTitle"
-                    android:hint="@string/enter_your_name"
-                    android:backgroundTint="@android:color/transparent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/group_1"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -106,12 +106,39 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/name_icon" />
 
-                <View
-                    android:id="@+id/group_2"
-                    android:layout_width="320dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/rectangle_5" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/group_2"
+                        android:layout_width="320dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/rectangle_5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editTextTextSurname"
+                        android:layout_width="305dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="@string/enter_your_surname"
+                        android:inputType="textCapWords"
+                        android:textColorHighlight="@color/subTitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/group_2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -132,15 +159,41 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
                     app:srcCompat="@drawable/carbon_email" />
 
-                <View
-                    android:id="@+id/group_3"
-                    android:layout_width="320dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/rectangle_5" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/group_3"
+                        android:layout_width="320dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rectangle_5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editTextTextEmail"
+                        android:layout_width="305dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="@string/enter_email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHighlight="@color/subTitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/group_3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
             <View
@@ -167,15 +220,39 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
                     app:srcCompat="@drawable/lock_open" />
 
-                <View
-                    android:id="@+id/group_5"
-                    android:layout_width="320dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/rectangle_5" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
+                    <View
+                        android:id="@+id/group_5"
+                        android:layout_width="320dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rectangle_5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPassword"
+                        android:layout_width="305dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="@string/enter_password"
+                        android:inputType="textPassword"
+                        android:textColorHighlight="@color/subTitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/group_5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 

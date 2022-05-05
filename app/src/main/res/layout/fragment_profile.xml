@@ -25,7 +25,7 @@
         android:id="@+id/button3"
         style="@style/buttons"
         android:layout_width="192dp"
-        android:layout_height="36dp"
+        android:layout_height="35dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/rectangle_3"
         android:text="@string/change_profile"
@@ -274,10 +274,75 @@
         app:layout_constraintStart_toStartOf="@+id/group_34"
         app:layout_constraintTop_toTopOf="@+id/group_43" />
 
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="2dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
-    <!-- Group 2 -->
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/group_35"
+        app:layout_constraintEnd_toEndOf="@+id/group_35"
+        app:layout_constraintTop_toTopOf="@+id/group_35" />
 
+    <TextView
+        android:id="@+id/textView30"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="1dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/group_34"
+        app:layout_constraintEnd_toEndOf="@+id/group_34"
+        app:layout_constraintTop_toTopOf="@+id/group_34" />
 
-    <!-- Group 1 -->
+    <TextView
+        android:id="@+id/textView32"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="2dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/group_32"
+        app:layout_constraintEnd_toEndOf="@+id/group_32"
+        app:layout_constraintTop_toTopOf="@+id/group_32" />
+
+    <TextView
+        android:id="@+id/textView31"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="2dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/group_33"
+        app:layout_constraintEnd_toEndOf="@+id/group_33"
+        app:layout_constraintTop_toTopOf="@+id/group_33" />
+
+    <TextView
+        android:id="@+id/textView33"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="1dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/group_36"
+        app:layout_constraintEnd_toEndOf="@+id/group_36"
+        app:layout_constraintTop_toTopOf="@+id/group_36" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,7 @@
     <item
         android:id="@+id/navigation_translator"
         android:title="@string/translator"
-        android:icon="@drawable/translate_icon"
-        />
+        android:icon="@drawable/translate_icon"/>
     <item
         android:id="@+id/navigation_parser"
         android:title="@string/parser"
