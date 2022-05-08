@@ -11,10 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.easy_lang_dictionary.activities.MainActivity2;
 import com.example.easy_lang_dictionary.R;
-import com.example.easy_lang_dictionary.databinding.FragmentChooseProfileBinding;
-import com.example.easy_lang_dictionary.databinding.FragmentEditProfileBinding;
 import com.example.easy_lang_dictionary.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends Fragment {
@@ -35,10 +35,13 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container,false);
         View view = binding.getRoot();
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+        MainActivity2 mainActivity2 = (MainActivity2) getActivity();
+        TextView title = mainActivity2.findViewById(R.id.title);
         AppCompatImageButton editButton = binding.editButton;
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                title.setText(R.string.edit_profile);
                 navController.navigate(R.id.action_fragment_profile_to_fragment_edit_profile);
             }
         });

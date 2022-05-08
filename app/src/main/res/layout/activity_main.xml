@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <View
         android:id="@+id/group_2"
@@ -82,12 +82,17 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/group_4" />
 
-    <TextView
-        android:id="@+id/textView28"
+    <EditText
+        android:id="@+id/editTextTitle"
+        style="@style/b18"
+        android:focusable="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
         android:text="@string/choose_profile"
-        style="@style/b18"
         app:layout_constraintBottom_toBottomOf="@+id/group_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

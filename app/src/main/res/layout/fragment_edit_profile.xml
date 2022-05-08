@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments_MainActivity.EditProfileFragment">
+    tools:context=".fragments_MainActivity2.EditProfileFragment">
 
     <View
         android:id="@+id/rectangle_8"
@@ -30,14 +30,14 @@
         app:layout_constraintTop_toBottomOf="@+id/rectangle_6" />
 
     <EditText
+        android:id="@+id/editTextTextSurname"
         style="@style/r16"
-        android:id="@+id/editTextTextPersonName8"
         android:layout_width="265dp"
         android:layout_height="40dp"
         android:backgroundTint="@android:color/transparent"
         android:ems="10"
-        android:hint="Surname"
         android:inputType="textPersonName"
+        android:text="Surname"
         android:textColorHint="@color/title"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_7"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_7"
@@ -62,9 +62,23 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rectangle_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
+
+    <EditText
+        android:id="@+id/editTextTextLanguage"
+        style="@style/r16"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Language"
+        android:textColorHint="@color/title"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_5" />
 
     <View
         android:id="@+id/rectangle_4"
@@ -89,29 +103,30 @@
         app:layout_constraintTop_toBottomOf="@+id/rectangle_7" />
 
     <EditText
+        android:id="@+id/editTextTextEmail"
         style="@style/r16"
-        android:id="@+id/editTextTextPersonName9"
         android:layout_width="265dp"
         android:layout_height="40dp"
         android:backgroundTint="@android:color/transparent"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Email"
+        android:text="Email"
         android:textColorHint="@color/title"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_" />
+        app:layout_constraintTop_toTopOf="@+id/rectangle_"
+        tools:ignore="TextFields" />
 
     <EditText
+        android:id="@+id/editTextTextPassword"
         style="@style/r16"
-        android:id="@+id/editTextTextPersonName12"
         android:layout_width="265dp"
         android:layout_height="40dp"
         android:layout_marginEnd="1dp"
         android:backgroundTint="@android:color/transparent"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password"
+        android:text="Password"
 
         android:textColorHint="@color/title"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
@@ -289,14 +304,14 @@
         app:layout_constraintTop_toTopOf="@+id/group_16" />
 
     <EditText
+        android:id="@+id/editTextTextName"
         style="@style/r16"
-        android:id="@+id/editTextTextPersonName"
         android:layout_width="265dp"
         android:layout_height="40dp"
         android:backgroundTint="@android:color/transparent"
         android:ems="10"
-        android:hint="Name"
         android:inputType="textPersonName"
+        android:text="Name"
         android:textColorHint="@color/title"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_6"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity2"
+    tools:context=".activities.MainActivity2"
     tools:ignore="MissingClass">
 
     <androidx.fragment.app.FragmentContainerView
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toTopOf="@+id/group_3" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/title"
         style="@style/b18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

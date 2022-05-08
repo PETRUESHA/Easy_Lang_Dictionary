@@ -71,6 +71,7 @@
                     app:layout_constraintVertical_bias="0.6" />
 
                 <EditText
+                    style="@style/r16"
                     android:id="@+id/editTextTextName"
                     android:layout_width="305dp"
                     android:layout_height="40dp"
@@ -123,6 +124,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
+                        style="@style/r16"
                         android:id="@+id/editTextTextSurname"
                         android:layout_width="305dp"
                         android:layout_height="40dp"
@@ -178,6 +180,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
+                        style="@style/r16"
                         android:id="@+id/editTextTextEmail"
                         android:layout_width="305dp"
                         android:layout_height="40dp"
@@ -239,6 +242,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
+                        style="@style/r16"
                         android:id="@+id/editTextTextPassword"
                         android:layout_width="305dp"
                         android:layout_height="40dp"

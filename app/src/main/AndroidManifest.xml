@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Easy_Lang_Dictionary">
         <activity
-            android:name=".MainActivity2"
+            android:name=".activities.MainActivity2"
             android:exported="true" >
 
 
@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
 
         </activity>

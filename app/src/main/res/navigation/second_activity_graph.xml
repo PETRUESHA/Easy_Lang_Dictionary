@@ -39,7 +39,7 @@
         tools:layout="@layout/fragment_translator" />
     <fragment
         android:id="@+id/fragment_edit_profile"
-        android:name="com.example.easy_lang_dictionary.fragments_MainActivity.EditProfileFragment"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.easy_lang_dictionary.MainActivity"
+        android:name="com.example.easy_lang_dictionary.activities.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 </navigation>
