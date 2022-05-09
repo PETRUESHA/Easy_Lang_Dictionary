@@ -13,7 +13,7 @@ public class App{
     private Database database;
 
     private App(Context ctx) {
-        database = Room.databaseBuilder(ctx, Database.class, "database").allowMainThreadQueries().build();
+        database = Room.databaseBuilder(ctx, Database.class, "database").addMigrations(Database.MIGRATION_1_2).allowMainThreadQueries().build();
     }
 
     public static App getInstance(Context ctx) {

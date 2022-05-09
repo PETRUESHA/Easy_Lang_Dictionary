@@ -8,11 +8,13 @@ import androidx.room.Update;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 @androidx.room.Dao
 public interface UserDao {
 
     @Query("SELECT * FROM user")
-    List<User> getAll();
+    Flowable<List<User>> getAll(); 
 
     @Query("SELECT * FROM user WHERE id = :id")
     User getById(long id);

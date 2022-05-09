@@ -1,5 +1,6 @@
 package com.example.easy_lang_dictionary.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.easy_lang_dictionary.R;
+import com.example.easy_lang_dictionary.room.User;
+
+import java.util.List;
 
 public class ChooseProfileAdapter extends RecyclerView.Adapter<ChooseProfileAdapter.ViewPattern> {
+    private List<User> users;
 
+    public ChooseProfileAdapter(List<User> users_list) {
+        users = users_list;
+    }
 
     @NonNull
     @Override
@@ -22,20 +30,31 @@ public class ChooseProfileAdapter extends RecyclerView.Adapter<ChooseProfileAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewPattern holder, int position) {
+        User user = users.get(position);
+
+        holder.Profile_name.setText(user.getProfile_name());
+        holder.Name.setText(user.getName());
+        holder.Surname.setText(user.getSurname());
+        holder.Language.setText(user.getLanguage());
+        holder.Level_of_language.setText(user.getLevel_of_language());
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return users.size();
     }
 
     public class ViewPattern extends RecyclerView.ViewHolder {
         
-        TextView tv;
+        TextView Profile_name, Name, Surname, Language, Level_of_language;
 
         public ViewPattern(@NonNull View itemView) {
             super(itemView);
-            tv = itemView.findViewById(R.id.textView3);
+            Profile_name = itemView.findViewById(R.id.textViewProfileName);
+            Name = itemView.findViewById(R.id.textViewName);
+            Surname = itemView.findViewById(R.id.textViewSurname);
+            Language = itemView.findViewById(R.id.textViewLanguage);
+            Level_of_language = itemView.findViewById(R.id.textViewLevel);
         }
     }
 }

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.easy_lang_dictionary.R;
@@ -35,18 +36,9 @@ public class MainActivity extends AppCompatActivity {
         }
         Database db = App.getInstance(getApplicationContext()).getDatabase();
         UserDao userDao = db.userDao();
-        User user = new User();
-        user.setId(1);
-        user.setName("Petr");
-        user.setSurname("Zarenkov");
-        user.setEmail("pzarenkov.99@gmail.com");
-        user.setPassword("DeafaultPass");
-        user.setLanguage("English");
-        user.setLevel_of_language("B2");
-
+        User user = new User(1, "Profile_1", "Petr", "Zarenkov", "pzarenkov.99@gmail.com", "DeafaultPass", "English", "B2");
         userDao.insert(user);
-
-        List<User> users = userDao.getAll();
-        Log.d("RRR", users.get(0).getName());
+        User user1 = new User(2, "Profile_2", "Nastya", "Zarenkova", "azarenkova.99@gmail.com", "DeafaultPass", "German", "B1");
+        userDao.insert(user1);
     }
 }

@@ -9,15 +9,11 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
 
-    @PrimaryKey
-    private long id;
-
-    @ColumnInfo(name = "name")
-    private String name;
-
     public User() {}
-    public User(long id, String name, String surname, String email, String password, String language, String level_of_language) {
+
+    public User(long id, String profile_name, String name, String surname, String email, String password, String language, String level_of_language) {
         this.id = id;
+        this.profile_name = profile_name;
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -25,6 +21,15 @@ public class User implements Serializable {
         this.language = language;
         this.level_of_language = level_of_language;
     }
+
+    @PrimaryKey
+    private long id;
+
+    @ColumnInfo(name = "name")
+    private String name;
+
+    @ColumnInfo(name = "profile_name")
+    private String profile_name;
 
     @ColumnInfo(name = "surname")
     private String surname;
@@ -44,6 +49,10 @@ public class User implements Serializable {
     public long getId() { return id; }
 
     public void setId(long id) { this.id = id; }
+
+    public String getProfile_name() { return profile_name; }
+
+    public void setProfile_name(String profile_name) { this.profile_name = profile_name; }
 
     public String getName() { return name; }
 
@@ -68,4 +77,6 @@ public class User implements Serializable {
     public String getLevel_of_language() { return level_of_language; }
 
     public void setLevel_of_language(String level_of_language) { this.level_of_language = level_of_language; }
+
+
 }

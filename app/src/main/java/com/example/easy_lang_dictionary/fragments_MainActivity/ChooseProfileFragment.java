@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,16 @@ import com.example.easy_lang_dictionary.activities.MainActivity;
 import com.example.easy_lang_dictionary.R;
 import com.example.easy_lang_dictionary.adapters.ChooseProfileAdapter;
 import com.example.easy_lang_dictionary.databinding.FragmentChooseProfileBinding;
+import com.example.easy_lang_dictionary.room.App;
+import com.example.easy_lang_dictionary.room.Database;
+import com.example.easy_lang_dictionary.room.User;
+import com.example.easy_lang_dictionary.room.UserDao;
+
+import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 
 public class ChooseProfileFragment extends Fragment {
@@ -37,10 +48,16 @@ public class ChooseProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentChooseProfileBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        initViews();
+
+        RecyclerView recyclerView = binding.recyclerView;
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+
         MainActivity mainActivity = (MainActivity) getActivity();
         EditText title = mainActivity.findViewById(R.id.editTextTitle);
+
         Button navigation_to_newProf = binding.button;
         navigation_to_newProf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,14 +67,18 @@ public class ChooseProfileFragment extends Fragment {
                 navController.navigate(R.id.action_chooseProfile_to_newProfile);
             }
         });
-        return view;
-    }
 
-    public void initViews() {
-        RecyclerView recyclerView = binding.recyclerView;
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new ChooseProfileAdapter());
+        final Disposable subscribe = App.getInstance(getContext()).getDatabase()
+                .userDao()
+                .getAll()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<User>>() {
+            @Override
+            public void accept(List<User> users) throws Exception {
+                recyclerView.setAdapter(new ChooseProfileAdapter(users));
+            }
+        });
+
+        return view;
     }
 }
