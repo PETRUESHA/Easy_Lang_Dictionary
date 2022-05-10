@@ -55,8 +55,7 @@ public class ChooseProfileFragment extends Fragment {
 
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
 
-        MainActivity mainActivity = (MainActivity) getActivity();
-        EditText title = mainActivity.findViewById(R.id.editTextTitle);
+        EditText title = MainActivity.title;
 
         Button navigation_to_newProf = binding.button;
         navigation_to_newProf.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +67,8 @@ public class ChooseProfileFragment extends Fragment {
             }
         });
 
-        final Disposable subscribe = App.getInstance(getContext()).getDatabase()
+        final Disposable subscribe = App.getInstance(getContext())
+                .getDatabase()
                 .userDao()
                 .getAll()
                 .observeOn(AndroidSchedulers.mainThread())

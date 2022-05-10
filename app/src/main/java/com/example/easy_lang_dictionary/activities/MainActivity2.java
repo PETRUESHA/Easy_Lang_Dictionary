@@ -2,7 +2,9 @@ package com.example.easy_lang_dictionary.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,24 +19,34 @@ import com.example.easy_lang_dictionary.fragments_MainActivity2.ParserFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.ProfileFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.SearchFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.TranslatorFragment;
+import com.example.easy_lang_dictionary.room.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity2 extends AppCompatActivity {
+
     private ActivityMain2Binding binding;
     private NavController navController;
     private BottomNavigationView bottomNavigationView;
+    public static EditText title;
+    public static User user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         final NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         if (navHostFragment != null) {
             navController = navHostFragment.getNavController();
         }
-        TextView title = binding.title;
+
+
+        user = (User) getIntent().getSerializableExtra("user");
+
+        title = binding.title;
         bottomNavigationView = binding.bottomNavigationView;
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
 
@@ -43,7 +55,6 @@ public class MainActivity2 extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_profile:
-                        title.setText(R.string.profile);
                         navController.navigate(R.id.fragment_profile);
                         return true;
                     case R.id.navigation_search:
@@ -68,11 +79,6 @@ public class MainActivity2 extends AppCompatActivity {
         });
         bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
-        /* ProfileFragment profileFragment = new ProfileFragment();
-        SearchFragment searchFragment = new SearchFragment();
-        DictionaryFragment dictionaryFragment = new DictionaryFragment();                # For future
-        ParserFragment parserFragment = new ParserFragment();
-        TranslatorFragment translatorFragment = new TranslatorFragment();
-         */
+
     }
 }

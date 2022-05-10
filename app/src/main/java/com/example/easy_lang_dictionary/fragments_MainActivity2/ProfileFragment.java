@@ -16,10 +16,12 @@ import android.widget.TextView;
 import com.example.easy_lang_dictionary.activities.MainActivity2;
 import com.example.easy_lang_dictionary.R;
 import com.example.easy_lang_dictionary.databinding.FragmentProfileBinding;
+import com.example.easy_lang_dictionary.room.User;
 
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding binding;
     private NavController navController;
+    private TextView title, name, surname, email, password, language, level_of_language;
 
     public ProfileFragment() {
     }
@@ -33,18 +35,30 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container,false);
+
         View view = binding.getRoot();
+
+        User user = MainActivity2.user;
+
+        title = MainActivity2.title;
+        name = binding.textView6;
+        surname = binding.textView17;
+        email = binding.textView32;
+        password = binding.textView30;
+        language = binding.textView31;
+        level_of_language = binding.textView33;
+        loadUser(user);
+
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
-        MainActivity2 mainActivity2 = (MainActivity2) getActivity();
-        TextView title = mainActivity2.findViewById(R.id.title);
         AppCompatImageButton editButton = binding.editButton;
+
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                title.setText(R.string.edit_profile);
                 navController.navigate(R.id.action_fragment_profile_to_fragment_edit_profile);
             }
         });
+
         Button changeProfileButton = binding.button3;
         changeProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +66,17 @@ public class ProfileFragment extends Fragment {
                 navController.navigate(R.id.action_fragment_profile_to_mainActivity);
             }
         });
+
         return view;
+    }
+
+    private void loadUser(User user) {
+        title.setText(user.getProfile_name());
+        name.setText(user.getName());
+        surname.setText(user.getSurname());
+        email.setText(user.getEmail());
+        password.setText(user.getPassword());
+        language.setText(user.getLanguage());
+        level_of_language.setText(user.getLevel_of_language());
     }
 }

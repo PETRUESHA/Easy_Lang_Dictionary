@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -24,21 +25,23 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private NavController navController;
     private View view;
+    public static EditText title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        title = binding.editTextTitle;
         final NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         if (navHostFragment != null) {
             navController = navHostFragment.getNavController();
         }
-        Database db = App.getInstance(getApplicationContext()).getDatabase();
+        /*Database db = App.getInstance(getApplicationContext()).getDatabase();
         UserDao userDao = db.userDao();
         User user = new User(1, "Profile_1", "Petr", "Zarenkov", "pzarenkov.99@gmail.com", "DeafaultPass", "English", "B2");
         userDao.insert(user);
         User user1 = new User(2, "Profile_2", "Nastya", "Zarenkova", "azarenkova.99@gmail.com", "DeafaultPass", "German", "B1");
-        userDao.insert(user1);
+        userDao.insert(user1); */
     }
 }

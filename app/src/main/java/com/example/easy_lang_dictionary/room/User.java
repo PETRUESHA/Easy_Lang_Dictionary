@@ -11,8 +11,7 @@ public class User implements Serializable {
 
     public User() {}
 
-    public User(long id, String profile_name, String name, String surname, String email, String password, String language, String level_of_language) {
-        this.id = id;
+    public User(String profile_name, String name, String surname, String email, String password, String language, String level_of_language) {
         this.profile_name = profile_name;
         this.name = name;
         this.surname = surname;

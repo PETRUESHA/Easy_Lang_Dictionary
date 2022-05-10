@@ -78,17 +78,24 @@
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/group_3" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/title"
         style="@style/b18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profile_1"
-        app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center"
+        android:inputType="text"
+        android:text="@string/profile"
+        app:layout_constraintBottom_toBottomOf="@+id/group_"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_3" />
+        app:layout_constraintTop_toTopOf="@+id/group_" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
