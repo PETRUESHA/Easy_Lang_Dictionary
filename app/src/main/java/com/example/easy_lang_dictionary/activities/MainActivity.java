@@ -37,11 +37,5 @@ public class MainActivity extends AppCompatActivity {
         if (navHostFragment != null) {
             navController = navHostFragment.getNavController();
         }
-        /*Database db = App.getInstance(getApplicationContext()).getDatabase();
-        UserDao userDao = db.userDao();
-        User user = new User(1, "Profile_1", "Petr", "Zarenkov", "pzarenkov.99@gmail.com", "DeafaultPass", "English", "B2");
-        userDao.insert(user);
-        User user1 = new User(2, "Profile_2", "Nastya", "Zarenkova", "azarenkova.99@gmail.com", "DeafaultPass", "German", "B1");
-        userDao.insert(user1); */
     }
 }

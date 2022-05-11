@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_fragment_edit_profile_to_fragment_profile"
             app:destination="@id/fragment_profile" />
+        <action
+            android:id="@+id/action_fragment_edit_profile_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"

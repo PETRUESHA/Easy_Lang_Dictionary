@@ -9,19 +9,7 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
 
-    public User() {}
-
-    public User(String profile_name, String name, String surname, String email, String password, String language, String level_of_language) {
-        this.profile_name = profile_name;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
-        this.language = language;
-        this.level_of_language = level_of_language;
-    }
-
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long id;
 
     @ColumnInfo(name = "name")
