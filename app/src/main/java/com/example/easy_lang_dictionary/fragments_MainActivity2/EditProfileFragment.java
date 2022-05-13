@@ -27,6 +27,7 @@ import com.example.easy_lang_dictionary.room.App;
 import com.example.easy_lang_dictionary.room.User;
 
 import java.util.Objects;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -62,7 +63,7 @@ public class EditProfileFragment extends Fragment {
 
         spinner = binding.spinner2;
         ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, languages);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinner_drop_item);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -98,9 +99,14 @@ public class EditProfileFragment extends Fragment {
             public void onClick(View v) {
                 if (updateUser(user)) {
                     title.setFocusable(false);
-                    App.getInstance(getContext())
-                            .getDatabase().userDao()
-                            .update(user);                                                          // КАК СДЕЛАТЬ ЧЕРЕЗ rxjava!!!!
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            App.getInstance(getContext())
+                                    .getDatabase().userDao()
+                                    .update(user);
+                        }
+                    }).start();
                     navController.navigate(R.id.action_fragment_edit_profile_to_fragment_profile);
                 }
             }
@@ -110,7 +116,12 @@ public class EditProfileFragment extends Fragment {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                App.getInstance(getContext()).getDatabase().userDao().delete(user);                 // СДЕЛАТЬ НЕ В ГЛАВНОМ ПОТОКЕ!!!!
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        App.getInstance(getContext()).getDatabase().userDao().delete(user);
+                    }
+                }).start();
                 navController.navigate(R.id.action_fragment_edit_profile_to_mainActivity);
             }
         });

@@ -86,7 +86,12 @@ public class NewProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (createUser()) {
-                    App.getInstance(getContext()).getDatabase().userDao().insert(user);         // КАК СДЕЛАТЬ ЧЕРЕЗ rxjava!!!!!
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            App.getInstance(getContext()).getDatabase().userDao().insert(user);
+                        }
+                    }).start();
                     Intent intent = new Intent(getContext(), MainActivity2.class);
                     intent.putExtra("user", user);
                     Objects.requireNonNull(getContext()).startActivity(intent);

@@ -53,7 +53,6 @@ public class ChooseProfileAdapter extends RecyclerView.Adapter<ChooseProfileAdap
         holder.entryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("RRR", Integer.toString(users.size()));
                 Intent intent = new Intent(ctx, MainActivity2.class);
                 intent.putExtra("user", user);
                 ctx.startActivity(intent);

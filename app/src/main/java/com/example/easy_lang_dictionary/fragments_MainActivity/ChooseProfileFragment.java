@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 
 import com.example.easy_lang_dictionary.activities.MainActivity;
 import com.example.easy_lang_dictionary.R;
@@ -51,7 +53,8 @@ public class ChooseProfileFragment extends Fragment {
 
         RecyclerView recyclerView = binding.recyclerView;
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerView.setLayoutManager(layoutManager);
 
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
 
@@ -73,11 +76,11 @@ public class ChooseProfileFragment extends Fragment {
                 .getAll()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<List<User>>() {
-            @Override
-            public void accept(List<User> users) throws Exception {
-                recyclerView.setAdapter(new ChooseProfileAdapter(users));
-            }
-        });
+                    @Override
+                    public void accept(List<User> users) throws Exception {
+                        recyclerView.setAdapter(new ChooseProfileAdapter(users));
+                    }
+                });
 
         return view;
     }
