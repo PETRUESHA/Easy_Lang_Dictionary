@@ -20,10 +20,12 @@ import com.example.easy_lang_dictionary.fragments_MainActivity2.ProfileFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.SearchFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.TranslatorFragment;
 import com.example.easy_lang_dictionary.retrofit.Api;
+import com.example.easy_lang_dictionary.retrofit.Translate;
 import com.example.easy_lang_dictionary.room.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 
@@ -31,6 +33,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -44,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
     public static User user;
     private static final String BASE_URL = "https://developers.lingvolive.com/";
     private static final String API_KEY = "ZmYzMzZiYTYtZmM5MC00NjJkLWIwYmYtMjE4NjJjYzRkNTE0OjE1YWMxYTg5MzhlMDQyZjk4NDI5Y2U1MDAxOGYwMGI1";
-    private String token;
+    public static String token_key;
 
 
     @Override
@@ -58,34 +61,47 @@ public class MainActivity2 extends AppCompatActivity {
             navController = navHostFragment.getNavController();
         }
 
-        /*OkHttpClient.Builder client = new OkHttpClient.Builder();
-        client.addInterceptor(new Interceptor() {
-            @Override
-            public Response intercept(Interceptor.Chain chain) throws IOException {
-                Request original = chain.request();
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
 
-                Request request = original.newBuilder()
-                        .header("Authorization", "Basic " + API_KEY)
-                        .method(original.method(), original.body())
-                        .build();
-                Response response = chain.proceed(request);
-                Log.d("RRR", response.toString());
-                return response;
-            }
-        });*/
-
-        Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).baseUrl(BASE_URL).build();
+        Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).baseUrl(BASE_URL).build();
         Api api = retrofit.create(Api.class);
-        new Thread(new Runnable() {
+
+
+        Call<String> token = api.getToken();
+
+        token.enqueue(new Callback<String>() {
             @Override
-            public void run() {
-                try {
-                    Log.d("RRR", api.getToken().execute().body());
-                } catch (IOException e) {
-                    e.printStackTrace();
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()) {
+                    token_key = response.body();
+                    Log.d("TTT", token_key);
                 }
             }
-        }).start();
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+            }
+        });
+
+        Call<String> translate = api.getTranslate(token_key, "plum", 1033, 1049, false);
+        translate.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()) {
+                    Log.d("RRR", "response " + response.body());
+                }
+                else {
+                    Log.d("RRR", "response code " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.d("RRR", "failure " + t);
+            }
+        });
 
 
         user = (User) getIntent().getSerializableExtra("user");
