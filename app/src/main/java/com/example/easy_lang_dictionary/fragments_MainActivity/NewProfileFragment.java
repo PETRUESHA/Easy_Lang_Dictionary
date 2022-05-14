@@ -56,8 +56,8 @@ public class NewProfileFragment extends Fragment {
         user = new User();
 
         spinner = binding.spinner;
-        ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, languages);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), R.layout.spinner, languages);
+        adapter.setDropDownViewResource(R.layout.spinner_drop_item);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

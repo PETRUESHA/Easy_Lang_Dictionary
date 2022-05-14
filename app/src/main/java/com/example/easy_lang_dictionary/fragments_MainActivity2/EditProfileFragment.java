@@ -62,7 +62,7 @@ public class EditProfileFragment extends Fragment {
         User user = MainActivity2.user;
 
         spinner = binding.spinner2;
-        ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, languages);
+        ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), R.layout.spinner, languages);
         adapter.setDropDownViewResource(R.layout.spinner_drop_item);
         spinner.setAdapter(adapter);
 

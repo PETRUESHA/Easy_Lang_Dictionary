@@ -5,6 +5,7 @@ package com.example.easy_lang_dictionary.retrofit;
 import static com.example.easy_lang_dictionary.activities.MainActivity2.token_key;
 
 import com.example.easy_lang_dictionary.activities.MainActivity2;
+import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -20,10 +21,9 @@ public interface Api {
     Call<String> getToken();
 
     @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTJNREl6TVRRc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5xVGVDcTZmcTN3SnFmNWQ5cXhtcUk1YlJPc056aUpkSWh3NklRZVVTdi00")
-    @GET("api/v1/Translation")
-    Call<String> getTranslate(@Header("Authorization") String token,
-                                @Query("text") String text,
-                                @Query("srcLang") Integer srcLang,
-                                @Query("dstLang") Integer dstLang,
-                                @Query("isCaseSensitive") Boolean isCaseSensitive);
+    @GET("api/v1/Minicard")
+    Call<JsonObject> getTranslate(
+                                  @Query("text") String text,
+                                  @Query("srcLang") Integer srcLang,
+                                  @Query("dstLang") Integer dstLang);
 }

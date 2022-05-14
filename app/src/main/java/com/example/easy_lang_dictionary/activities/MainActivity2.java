@@ -21,11 +21,13 @@ import com.example.easy_lang_dictionary.fragments_MainActivity2.SearchFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.TranslatorFragment;
 import com.example.easy_lang_dictionary.retrofit.Api;
 import com.example.easy_lang_dictionary.retrofit.Translate;
+import com.example.easy_lang_dictionary.retrofit.Translation;
 import com.example.easy_lang_dictionary.room.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
@@ -45,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     public static EditText title;
     public static User user;
-    private static final String BASE_URL = "https://developers.lingvolive.com/";
+    public static final String BASE_URL = "https://developers.lingvolive.com/";
     private static final String API_KEY = "ZmYzMzZiYTYtZmM5MC00NjJkLWIwYmYtMjE4NjJjYzRkNTE0OjE1YWMxYTg5MzhlMDQyZjk4NDI5Y2U1MDAxOGYwMGI1";
     public static String token_key;
 
@@ -84,25 +86,6 @@ public class MainActivity2 extends AppCompatActivity {
             public void onFailure(Call<String> call, Throwable t) {
             }
         });
-
-        Call<String> translate = api.getTranslate(token_key, "plum", 1033, 1049, false);
-        translate.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                if (response.isSuccessful()) {
-                    Log.d("RRR", "response " + response.body());
-                }
-                else {
-                    Log.d("RRR", "response code " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.d("RRR", "failure " + t);
-            }
-        });
-
 
         user = (User) getIntent().getSerializableExtra("user");
 
