@@ -21,12 +21,15 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.easy_lang_dictionary.R;
+import com.example.easy_lang_dictionary.Word_list;
 import com.example.easy_lang_dictionary.activities.MainActivity;
 import com.example.easy_lang_dictionary.activities.MainActivity2;
 import com.example.easy_lang_dictionary.databinding.FragmentNewProfileBinding;
 import com.example.easy_lang_dictionary.room.App;
+import com.example.easy_lang_dictionary.room.Converters;
 import com.example.easy_lang_dictionary.room.User;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class NewProfileFragment extends Fragment {
@@ -152,6 +155,10 @@ public class NewProfileFragment extends Fragment {
             user.setPassword(password);
             user.setLanguage(language);
             user.setLevel_of_language(level_of_language);
+            ArrayList<Word_list> wl = new ArrayList<>();
+            wl.add(new Word_list("first"));
+            wl.add(new Word_list("second"));
+            user.setWord_lists(Converters.fromArrayList(wl));
             return true;
         }
 

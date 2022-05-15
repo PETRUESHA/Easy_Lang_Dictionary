@@ -26,7 +26,14 @@
         android:id="@+id/fragment_dictionary"
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.DictionaryFragment"
         android:label="fragment_dictionary"
-        tools:layout="@layout/fragment_dictionary" />
+        tools:layout="@layout/fragment_dictionary" >
+        <action
+            android:id="@+id/action_fragment_dictionary_to_newWordListFragment"
+            app:destination="@id/newWordListFragment" />
+        <action
+            android:id="@+id/action_fragment_dictionary_to_wordListFragment"
+            app:destination="@id/wordListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_parser"
         android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.ParserFragment"
@@ -54,4 +61,14 @@
         android:name="com.example.easy_lang_dictionary.activities.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/newWordListFragment"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.NewWordListFragment"
+        android:label="fragment_word_list"
+        tools:layout="@layout/fragment_new_word_list" />
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.example.easy_lang_dictionary.fragments_MainActivity2.WordListFragment"
+        android:label="fragment_word_list"
+        tools:layout="@layout/fragment_word_list" />
 </navigation>

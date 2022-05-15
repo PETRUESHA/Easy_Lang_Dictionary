@@ -20,10 +20,16 @@ public interface Api {
     @POST("/api/v1.1/authenticate")
     Call<String> getToken();
 
-    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTJNREl6TVRRc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5xVGVDcTZmcTN3SnFmNWQ5cXhtcUk1YlJPc056aUpkSWh3NklRZVVTdi00")
+    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTJPVEF3TnpNc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5jRmtRQmlUOGFqcVg2UWI2ZHVFTkYzYXRaOVZqUTFnQTFfN3oydFFPcDFv")
     @GET("api/v1/Minicard")
     Call<JsonObject> getTranslate(
-                                  @Query("text") String text,
-                                  @Query("srcLang") Integer srcLang,
-                                  @Query("dstLang") Integer dstLang);
+            @Query("text") String text,
+            @Query("srcLang") Integer srcLang,
+            @Query("dstLang") Integer dstLang);
+
+    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTJPVEF3TnpNc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5jRmtRQmlUOGFqcVg2UWI2ZHVFTkYzYXRaOVZqUTFnQTFfN3oydFFPcDFv")
+    @GET("api/v1/Sound")
+    Call<String> getSound(
+            @Query("dictionaryName") String dictName,
+            @Query("fileName") String fileName);
 }

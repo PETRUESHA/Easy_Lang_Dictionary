@@ -4,7 +4,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.easy_lang_dictionary.Word_list;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @Entity
 public class User implements Serializable {
@@ -32,6 +35,9 @@ public class User implements Serializable {
 
     @ColumnInfo(name = "level_of_language")
     private String level_of_language;
+
+    @ColumnInfo(name = "word_lists")
+    private String word_lists;
 
     public long getId() { return id; }
 
@@ -65,5 +71,7 @@ public class User implements Serializable {
 
     public void setLevel_of_language(String level_of_language) { this.level_of_language = level_of_language; }
 
+    public String getWord_lists() { return word_lists; }
 
+    public void setWord_lists(String word_lists) { this.word_lists = word_lists; }
 }

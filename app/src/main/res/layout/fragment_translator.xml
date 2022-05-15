@@ -58,6 +58,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/switchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/text_fields"
+        android:src="@drawable/switch_arrows"
+        app:layout_constraintEnd_toStartOf="@+id/spinner4"
+        app:layout_constraintStart_toEndOf="@+id/spinner3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="130dp"
@@ -85,6 +96,7 @@
         app:layout_constraintTop_toTopOf="@+id/line_10"
         app:layout_constraintVertical_bias="0.666" />
 
+
     <TextView
         android:id="@+id/textViewTranslation"
         style="@style/r18"
@@ -96,5 +108,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/line_11" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/soundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/text_fields"
+        android:src="@drawable/dynamic"
+        app:layout_constraintStart_toEndOf="@+id/editInputText"
+        app:layout_constraintTop_toBottomOf="@+id/line_10"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

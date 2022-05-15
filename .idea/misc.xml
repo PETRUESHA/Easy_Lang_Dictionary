@@ -36,15 +36,21 @@
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_dictionary.xml" value="0.22" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_edit_profile.xml" value="0.22" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_first.xml" value="0.3625" />
+        <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_item.xml" value="0.23513513513513515" />
+        <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_item_list.xml" value="0.23513513513513515" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_new_profile.xml" value="0.22" />
+        <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_new_word_list.xml" value="0.23513513513513515" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_parser.xml" value="0.3625" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_search.xml" value="0.2" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_translator.xml" value="0.22" />
+        <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_word_list.xml" value="0.23513513513513515" />
+        <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/fragment_word_list2.xml" value="0.2260135135135135" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/profile_pattern.xml" value="0.22" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/spinner.xml" value="0.16486486486486487" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/spinner_close_item.xml" value="0.23513513513513515" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/spinner_drop_item.xml" value="0.23513513513513515" />
+        <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/layout/word_list_pattern.xml" value="0.23513513513513515" />
         <entry key="..\:/Projects/AndroidStudioProject/Easy_Lang_Dictionary/app/src/main/res/menu/bottom_navigation.xml" value="0.23513513513513515" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Easy_Lang_Dictionary/app/src/main/res/drawable/bottom.xml" value="0.3675" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Easy_Lang_Dictionary/app/src/main/res/drawable/nav_item_color_state.xml" value="0.326" />
@@ -65,5 +71,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.23513513513513515" />
+      </ProjectState>
+    </option>
   </component>
 </project>

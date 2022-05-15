@@ -1,9 +1,12 @@
 package com.example.easy_lang_dictionary.fragments_MainActivity2;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +31,11 @@ import com.google.gson.JsonObject;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,6 +54,9 @@ public class TranslatorFragment extends Fragment {
     private Integer lang1_code, lang2_code;
     private EditText inputText;
     private TextView textViewTranslation;
+    private String dictName;
+    private String soundFileName;
+    private String soundFile;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,6 +85,25 @@ public class TranslatorFragment extends Fragment {
         adapter2.setDropDownViewResource(R.layout.spinner_drop_item);
         spinner2.setAdapter(adapter2);
         spinner2.setSelection(4);
+
+        ImageButton soundButton = binding.soundButton;
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override                                                            // Для работы нужно записывать в wav файл
+            public void onClick(View v) {
+
+            }
+        });
+
+        ImageButton switchButton = binding.switchButton;
+        switchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id_1 = spinner1.getSelectedItemPosition();
+                int id_2 = spinner2.getSelectedItemPosition();
+                spinner1.setSelection(id_2);
+                spinner2.setSelection(id_1);
+            }
+        });
 
 
         ImageButton translateButton = binding.translateButton;
@@ -107,8 +137,40 @@ public class TranslatorFragment extends Fragment {
                 if (response.isSuccessful()) {
                     Translate tran = gson.fromJson(response.body(), Translate.class);
                     Translation translation = tran.getTranslation();
+                    /*dictName = translation.getDictionaryName();
+                    soundFileName = translation.getSoundName();*/
                     String tr = translation.getTranslation();
                     textViewTranslation.setText(tr);
+
+                    /*Call<String> sound = api.getSound(dictName, soundFileName);
+                    sound.enqueue(new Callback<String>() {
+                        @RequiresApi(api = Build.VERSION_CODES.O)
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if (response.isSuccessful()) {
+                                soundFile = response.body();
+                                String encoded = Base64.getEncoder().encodeToString(soundFile.getBytes());                 Необходимо понять как записать в .wav файл
+                                File path = Environment.getExternalStoragePublicDirectory(
+                                        Environment.DIRECTORY_MOVIES);
+                                File file = new File(path, "/" + "test.wav");
+                                try (FileWriter writer = new FileWriter("test.wav", false)) {
+                                    writer.write(encoded);
+                                    writer.flush();
+                                }
+                                catch (IOException ex) {
+                                    Log.d("RRR", ex.getMessage());
+                                }
+                            }
+                            else {
+                                Log.d("RRR", String.valueOf(response.code()));
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Log.d("RRR", "failure" + t);
+                        }
+                    }); */
                 }
                 else {
                     textViewTranslation.setText(R.string.error_messege);

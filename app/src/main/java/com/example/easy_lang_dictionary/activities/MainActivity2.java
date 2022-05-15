@@ -43,7 +43,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity2 extends AppCompatActivity {
 
     private ActivityMain2Binding binding;
-    private NavController navController;
+    public static NavController navController;
     private BottomNavigationView bottomNavigationView;
     public static EditText title;
     public static User user;
@@ -98,22 +98,27 @@ public class MainActivity2 extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_profile:
+                        title.setFocusable(false);
                         navController.navigate(R.id.fragment_profile);
                         return true;
                     case R.id.navigation_search:
                         title.setText(R.string.search);
+                        title.setFocusable(false);
                         navController.navigate(R.id.fragment_search);
                         return true;
                     case R.id.navigation_dictionary:
                         title.setText(R.string.dictionary);
+                        title.setFocusable(false);
                         navController.navigate(R.id.fragment_dictionary);
                         return true;
                     case R.id.navigation_parser:
                         title.setText(R.string.parser);
+                        title.setFocusable(false);
                         navController.navigate(R.id.fragment_parser);
                         return true;
                     case R.id.navigation_translator:
                         title.setText(R.string.translator);
+                        title.setFocusable(false);
                         navController.navigate(R.id.fragment_translator);
                         return true;
                     default:

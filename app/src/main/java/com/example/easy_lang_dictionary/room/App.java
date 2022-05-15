@@ -6,14 +6,16 @@ import android.content.Context;
 
 import androidx.room.Room;
 
-public class App{
+public class App {
     private Context ctx;
     private static App instance;
 
     private Database database;
 
     private App(Context ctx) {
-        database = Room.databaseBuilder(ctx, Database.class, "database").addMigrations(Database.MIGRATION_1_2).addMigrations(Database.MIGRATION_2_3).build();
+        database = Room.databaseBuilder(ctx, Database.class, "database")
+                .fallbackToDestructiveMigration()
+                .build();
     }
 
     public static App getInstance(Context ctx) {
