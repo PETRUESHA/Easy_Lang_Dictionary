@@ -64,7 +64,14 @@ public class DictionaryFragment extends Fragment {
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_fragment_dictionary_to_newWordListFragment);
+                MainActivity2.title.setFocusableInTouchMode(true);
+                Word_list word_list = new Word_list();
+                word_list.setWords(new ArrayList<>());
+                word_list.setTranslates(new ArrayList<>());
+                word_list.setName("word list 1");
+                WordListFragment.word_list = word_list;
+                MainActivity2.bottomNavigationView.setVisibility(View.INVISIBLE);
+                navController.navigate(R.id.action_fragment_dictionary_to_wordListFragment);
             }
         });
 

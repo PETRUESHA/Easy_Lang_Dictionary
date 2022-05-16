@@ -55,4 +55,8 @@
     <string name="translation">Translation</string>
     <string name="error_messege">Oops! Something went wrong!</string>
     <string name="word_list_1">word list 1</string>
+    <string name="word">Word</string>
+    <string name="translate">Translate</string>
+    <string name="enter_word">Enter word</string>
+    <string name="enter_translate">Enter translate</string>
 </resources>

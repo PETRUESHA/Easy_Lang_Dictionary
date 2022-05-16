@@ -9,6 +9,7 @@ public class Word_list {
     private ArrayList<String> translates;
 
     public Word_list() {}
+
     public Word_list(String n) {
         this.name = n;
     }
@@ -33,7 +34,13 @@ public class Word_list {
         return translates;
     }
 
-    public void setTranslates(ArrayList<String> translates) {
-        this.translates = translates;
+    public void setTranslates(ArrayList<String> translates) { this.translates = translates; }
+
+    public void updateWords(String word) {
+        words.add(word);
+    }
+
+    public void updateTranslates(String translate) {
+        translates.add(translate);
     }
 }

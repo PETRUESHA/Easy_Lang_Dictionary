@@ -107,6 +107,7 @@ public class EditProfileFragment extends Fragment {
                                     .update(user);
                         }
                     }).start();
+                    MainActivity2.bottomNavigationView.setVisibility(View.VISIBLE);
                     navController.navigate(R.id.action_fragment_edit_profile_to_fragment_profile);
                 }
             }

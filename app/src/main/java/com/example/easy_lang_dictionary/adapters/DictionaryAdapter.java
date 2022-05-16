@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.easy_lang_dictionary.R;
 import com.example.easy_lang_dictionary.Word_list;
 import com.example.easy_lang_dictionary.activities.MainActivity2;
-import com.example.easy_lang_dictionary.fragments_MainActivity2.NewWordListFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.WordListFragment;
 
 import java.util.ArrayList;
@@ -21,7 +20,6 @@ import java.util.ArrayList;
 public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Pattern> {
     private ArrayList<Word_list> word_lists;
     private NavController navController;
-    private String name;
 
     public DictionaryAdapter(ArrayList<Word_list> lists) {
         this.word_lists = lists;
@@ -44,6 +42,9 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Pa
             @Override
             public void onClick(View v) {
                 WordListFragment.word_list = word_list;
+                MainActivity2.title.setText(word_list.getName());
+                MainActivity2.title.setFocusableInTouchMode(true);
+                MainActivity2.bottomNavigationView.setVisibility(View.INVISIBLE);
                 navController.navigate(R.id.action_fragment_dictionary_to_wordListFragment);
             }
         });

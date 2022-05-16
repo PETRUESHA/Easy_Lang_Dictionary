@@ -13,6 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.easy_lang_dictionary.R;
+import com.example.easy_lang_dictionary.adapters.DictionaryAdapter;
 import com.example.easy_lang_dictionary.databinding.ActivityMain2Binding;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.DictionaryFragment;
 import com.example.easy_lang_dictionary.fragments_MainActivity2.ParserFragment;
@@ -22,6 +23,7 @@ import com.example.easy_lang_dictionary.fragments_MainActivity2.TranslatorFragme
 import com.example.easy_lang_dictionary.retrofit.Api;
 import com.example.easy_lang_dictionary.retrofit.Translate;
 import com.example.easy_lang_dictionary.retrofit.Translation;
+import com.example.easy_lang_dictionary.room.Converters;
 import com.example.easy_lang_dictionary.room.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -44,7 +46,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private ActivityMain2Binding binding;
     public static NavController navController;
-    private BottomNavigationView bottomNavigationView;
+    public static BottomNavigationView bottomNavigationView;
     public static EditText title;
     public static User user;
     public static final String BASE_URL = "https://developers.lingvolive.com/";

@@ -26,6 +26,12 @@
         <item name="android:textColor">@color/p</item>
     </style>
 
+    <style name="r14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/p</item>
+    </style>
+
     <style name="hint18">
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">normal</item>

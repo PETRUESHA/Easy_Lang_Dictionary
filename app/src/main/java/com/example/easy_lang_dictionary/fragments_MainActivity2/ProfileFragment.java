@@ -55,6 +55,7 @@ public class ProfileFragment extends Fragment {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity2.bottomNavigationView.setVisibility(View.INVISIBLE);
                 navController.navigate(R.id.action_fragment_profile_to_fragment_edit_profile);
             }
         });
