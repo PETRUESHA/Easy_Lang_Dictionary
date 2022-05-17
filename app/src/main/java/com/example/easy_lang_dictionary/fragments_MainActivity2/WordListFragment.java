@@ -32,6 +32,7 @@ import java.util.ArrayList;
 public class WordListFragment extends Fragment {
     private FragmentWordListBinding binding;
     public static Word_list word_list;
+    public static int index;
     private Dialog dialog;
     private EditText editWord, editTranslate;
     private final User user = MainActivity2.user;
@@ -52,7 +53,7 @@ public class WordListFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new WordListAdapter(word_list.getWords(), word_list.getTranslates()));
 
-        dialog = new Dialog(getContext());
+        dialog = new Dialog(getContext(), R.style.DialogStyle);
         dialog.setTitle("Add new word");
         dialog.setContentView(R.layout.add_new_word_dialog);
         editWord = dialog.findViewById(R.id.editTextTextWord);
@@ -80,15 +81,19 @@ public class WordListFragment extends Fragment {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        App.getInstance(getContext()).getDatabase().userDao().update(user);
-                    }
-                }).start();
-                DictionaryFragment.recyclerView.setAdapter(new DictionaryAdapter(Converters.fromString(user.getWord_lists())));
-                MainActivity2.bottomNavigationView.setVisibility(View.VISIBLE);
-                navController.navigate(R.id.action_wordListFragment_to_fragment_dictionary);
+                if (addWordList()) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            App.getInstance(getContext()).getDatabase().userDao().update(user);
+                        }
+                    }).start();
+                    DictionaryFragment.recyclerView.setAdapter(new DictionaryAdapter(Converters.fromString(user.getWord_lists())));
+                    MainActivity2.title.setFocusable(false);
+                    MainActivity2.title.setText(getString(R.string.dictionary));
+                    MainActivity2.bottomNavigationView.setVisibility(View.VISIBLE);
+                    navController.navigate(R.id.action_wordListFragment_to_fragment_dictionary);
+                }
             }
         });
         return view;
@@ -111,11 +116,30 @@ public class WordListFragment extends Fragment {
         if (pass) {
             word_list.updateWords(word);
             word_list.updateTranslates(translate);
+            return true;
+        } else return false;
+    }
+
+    Boolean addWordList() {
+        String title = MainActivity2.title.getText().toString().trim();
+        if (title.isEmpty()) {
+            MainActivity2.title.setError(getString(R.string.required));
+            MainActivity2.title.requestFocus();
+            return false;
+        } else {
+            word_list.setName(title);
             ArrayList<Word_list> wlsts = Converters.fromString(user.getWord_lists());
-            wlsts.add(word_list);
-            user.setWord_lists(Converters.fromArrayList(wlsts));
+            if (index == -1) {
+                wlsts.add(word_list);
+                user.setWord_lists(Converters.fromArrayList(wlsts));
+            }
+            else {
+                wlsts.get(index).setName(word_list.getName());
+                wlsts.get(index).setWords(word_list.getWords());
+                wlsts.get(index).setTranslates(word_list.getTranslates());
+                user.setWord_lists(Converters.fromArrayList(wlsts));
+            }
             return true;
         }
-        else return false;
     }
 }

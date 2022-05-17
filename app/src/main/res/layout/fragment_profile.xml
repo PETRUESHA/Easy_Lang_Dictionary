@@ -62,7 +62,7 @@
         android:id="@+id/group_33"
         android:layout_width="370dp"
         android:layout_height="40dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rectangle_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -92,18 +92,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
-
-    <TextView
-        android:id="@+id/change_pass"
-        style="@style/r9"
-        android:layout_width="80dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="21dp"
-        android:gravity="center_vertical"
-        android:text="@string/change_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_34" />
 
     <View
         android:id="@+id/rectangle_1"
@@ -331,7 +319,8 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/group_33"
         app:layout_constraintEnd_toEndOf="@+id/group_33"
-        app:layout_constraintTop_toTopOf="@+id/group_33" />
+        app:layout_constraintTop_toTopOf="@+id/group_33"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView33"

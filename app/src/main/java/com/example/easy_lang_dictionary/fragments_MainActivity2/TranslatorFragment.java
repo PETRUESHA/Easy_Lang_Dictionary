@@ -1,9 +1,12 @@
 package com.example.easy_lang_dictionary.fragments_MainActivity2;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
@@ -19,12 +22,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.easy_lang_dictionary.R;
+import com.example.easy_lang_dictionary.Word_list;
 import com.example.easy_lang_dictionary.activities.MainActivity2;
 import com.example.easy_lang_dictionary.databinding.FragmentChooseProfileBinding;
 import com.example.easy_lang_dictionary.databinding.FragmentTranslatorBinding;
 import com.example.easy_lang_dictionary.retrofit.Api;
 import com.example.easy_lang_dictionary.retrofit.Translate;
 import com.example.easy_lang_dictionary.retrofit.Translation;
+import com.example.easy_lang_dictionary.room.App;
+import com.example.easy_lang_dictionary.room.Converters;
+import com.example.easy_lang_dictionary.room.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -35,6 +42,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,7 +56,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class TranslatorFragment extends Fragment {
     private FragmentTranslatorBinding binding;
     private final String[] languages = {"English", "French", "Spanish", "German", "Russian"};
-    private String lang1, lang2;
+    private final User user = MainActivity2.user;
+    private String lang1, lang2, word;
     private final String token = MainActivity2.token_key;
     private Map<String, Integer> lang_codes;
     private Integer lang1_code, lang2_code;
@@ -65,6 +74,37 @@ public class TranslatorFragment extends Fragment {
         View view = binding.getRoot();
         textViewTranslation = binding.textViewTranslation;
         inputText = binding.editInputText;
+
+        AppCompatButton addButton = binding.addButton;
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getWord()) {
+                    ArrayList<Word_list> word_lists = Converters.fromString(user.getWord_lists());
+                    String[] names = new String[word_lists.size()];
+                    String translate = textViewTranslation.getText().toString();
+                    for (int i = 0; i < word_lists.size(); i++) {
+                        names[i] = word_lists.get(i).getName();
+                    }
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogStyle);
+                    builder.setTitle("Choose word list");
+                    builder.setItems(names, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int item) {
+                            word_lists.get(item).updateWords(word);
+                            word_lists.get(item).updateTranslates(translate);
+                            user.setWord_lists(Converters.fromArrayList(word_lists));
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    App.getInstance(getContext()).getDatabase().userDao().update(user);
+                                }
+                            }).start();
+                        }
+                    }).show();
+                }
+            }
+        });
+
         lang_codes = new HashMap<>();
         lang_codes.put("English", 1033);
         lang_codes.put("Russian", 1049);
@@ -88,7 +128,8 @@ public class TranslatorFragment extends Fragment {
 
         ImageButton soundButton = binding.soundButton;
         soundButton.setOnClickListener(new View.OnClickListener() {
-            @Override                                                            // Для работы нужно записывать в wav файл
+            @Override
+            // Для работы нужно записывать в wav файл
             public void onClick(View v) {
 
             }
@@ -171,8 +212,7 @@ public class TranslatorFragment extends Fragment {
                             Log.d("RRR", "failure" + t);
                         }
                     }); */
-                }
-                else {
+                } else {
                     textViewTranslation.setText(R.string.error_messege);
                 }
             }
@@ -182,5 +222,14 @@ public class TranslatorFragment extends Fragment {
                 textViewTranslation.setText(R.string.error_messege);
             }
         });
+    }
+
+    Boolean getWord() {
+        word = inputText.getText().toString().trim();
+        if (word.isEmpty()) {
+            inputText.setError(getString(R.string.required));
+            inputText.requestFocus();
+            return false;
+        } else return true;
     }
 }

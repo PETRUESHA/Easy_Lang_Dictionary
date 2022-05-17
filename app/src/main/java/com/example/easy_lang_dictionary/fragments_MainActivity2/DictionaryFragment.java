@@ -70,6 +70,7 @@ public class DictionaryFragment extends Fragment {
                 word_list.setTranslates(new ArrayList<>());
                 word_list.setName("word list 1");
                 WordListFragment.word_list = word_list;
+                WordListFragment.index = -1;
                 MainActivity2.bottomNavigationView.setVisibility(View.INVISIBLE);
                 navController.navigate(R.id.action_fragment_dictionary_to_wordListFragment);
             }

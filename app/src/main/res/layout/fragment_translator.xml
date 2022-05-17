@@ -120,4 +120,16 @@
         app:layout_constraintTop_toBottomOf="@+id/line_10"
         tools:ignore="MissingConstraints" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addButton"
+        style="@style/buttons"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_4"
+        android:text="@string/add_to_word_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

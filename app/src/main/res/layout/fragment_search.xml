@@ -7,13 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".fragments_MainActivity2.SearchFragment">
 
-    <SearchView
+    <View
+        android:id="@+id/group_43"
         android:layout_width="370dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
         android:background="@drawable/search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,5 +32,60 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/group_43"
+        app:layout_constraintStart_toStartOf="@+id/group_43"
+        app:layout_constraintTop_toTopOf="@+id/group_43"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/loupe_icon" />
+
+    <View
+        android:id="@+id/line_"
+        android:layout_width="2dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/line_10"
+        app:layout_constraintBottom_toBottomOf="@+id/group_43"
+        app:layout_constraintEnd_toStartOf="@+id/searchButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@null"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintBottom_toBottomOf="@+id/group_43"
+        app:layout_constraintEnd_toEndOf="@+id/group_43"
+        app:layout_constraintTop_toTopOf="@+id/group_43" />
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        style="@style/r16"
+        android:layout_width="282dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:hint="@string/search"
+        android:inputType="textCapWords"
+        android:textColorHighlight="@color/subTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/group_43"
+        app:layout_constraintEnd_toStartOf="@+id/searchButton"
+        app:layout_constraintTop_toTopOf="@+id/group_43" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="721dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

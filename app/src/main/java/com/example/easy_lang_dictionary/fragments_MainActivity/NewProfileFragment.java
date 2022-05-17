@@ -155,22 +155,7 @@ public class NewProfileFragment extends Fragment {
             user.setPassword(password);
             user.setLanguage(language);
             user.setLevel_of_language(level_of_language);
-            ArrayList<Word_list> wl = new ArrayList<>();
-            ArrayList<String> w = new ArrayList<>();
-            w.add("world");
-            w.add("good");
-            ArrayList<String> t = new ArrayList<>();
-            t.add("мир");
-            t.add("хороший");
-            Word_list f = new Word_list("first");
-            f.setWords(w);
-            f.setTranslates(t);
-            wl.add(f);
-            Word_list s = new Word_list("second");
-            s.setWords(w);
-            s.setTranslates(t);
-            wl.add(s);
-            user.setWord_lists(Converters.fromArrayList(wl));
+            user.setWord_lists(Converters.fromArrayList(new ArrayList<>()));
             return true;
         }
 

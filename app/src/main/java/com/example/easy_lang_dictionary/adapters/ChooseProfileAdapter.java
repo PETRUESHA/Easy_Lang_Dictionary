@@ -27,7 +27,7 @@ public class ChooseProfileAdapter extends RecyclerView.Adapter<ChooseProfileAdap
     private List<User> users;
     private Context ctx;
 
-    public ChooseProfileAdapter(List<User> users_list) {
+    public ChooseProfileAdapter( List<User> users_list) {
         users = users_list;
     }
 

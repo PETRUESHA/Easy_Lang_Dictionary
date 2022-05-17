@@ -67,4 +67,17 @@
         <item name="android:letterSpacing">0.09</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:colorAccent">@color/black</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:background">@color/text_fields</item>
+    </style>
+    <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:colorAccent">@color/black</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:background">@color/white</item>
+    </style>
 </resources>

@@ -42,6 +42,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Pa
             @Override
             public void onClick(View v) {
                 WordListFragment.word_list = word_list;
+                WordListFragment.index = holder.getBindingAdapterPosition();
                 MainActivity2.title.setText(word_list.getName());
                 MainActivity2.title.setFocusableInTouchMode(true);
                 MainActivity2.bottomNavigationView.setVisibility(View.INVISIBLE);

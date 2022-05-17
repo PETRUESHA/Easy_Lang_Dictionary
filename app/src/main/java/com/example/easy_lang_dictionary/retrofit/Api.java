@@ -20,16 +20,24 @@ public interface Api {
     @POST("/api/v1.1/authenticate")
     Call<String> getToken();
 
-    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTJPVEF3TnpNc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5jRmtRQmlUOGFqcVg2UWI2ZHVFTkYzYXRaOVZqUTFnQTFfN3oydFFPcDFv")
+    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTVNRE01T1Rjc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5YMDlESU5ZdkxhLXVIVDloTnh3eHcxbGJIc2pxLXVEM2VwTnVFOXdLVDFN")
     @GET("api/v1/Minicard")
     Call<JsonObject> getTranslate(
             @Query("text") String text,
             @Query("srcLang") Integer srcLang,
             @Query("dstLang") Integer dstLang);
 
-    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTJPVEF3TnpNc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5jRmtRQmlUOGFqcVg2UWI2ZHVFTkYzYXRaOVZqUTFnQTFfN3oydFFPcDFv")
+    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTVNRE01T1Rjc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5YMDlESU5ZdkxhLXVIVDloTnh3eHcxbGJIc2pxLXVEM2VwTnVFOXdLVDFN")
     @GET("api/v1/Sound")
     Call<String> getSound(
             @Query("dictionaryName") String dictName,
             @Query("fileName") String fileName);
+
+    @Headers("Authorization: Bearer ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5USTVNRE01T1Rjc0lrMXZaR1ZzSWpwN0lrTm9ZWEpoWTNSbGNuTlFaWEpFWVhraU9qVXdNREF3TENKVmMyVnlTV1FpT2pZd01qTXNJbFZ1YVhGMVpVbGtJam9pWm1Zek16WmlZVFl0Wm1NNU1DMDBOakprTFdJd1ltWXRNakU0TmpKall6UmtOVEUwSW4xOS5YMDlESU5ZdkxhLXVIVDloTnh3eHcxbGJIc2pxLXVEM2VwTnVFOXdLVDFN")
+    @GET("api/v1/WordList")
+    Call<JsonObject> getWordList(
+            @Query("prefix") String prefix,
+            @Query("srcLang") int srcLang,
+            @Query("dstLang") int dstLang,
+            @Query("pageSize") int pageSize);
 }
