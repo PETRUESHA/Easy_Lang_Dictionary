@@ -26,6 +26,7 @@ import com.example.easy_lang_dictionary.databinding.FragmentEditProfileBinding;
 import com.example.easy_lang_dictionary.room.App;
 import com.example.easy_lang_dictionary.room.User;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -65,6 +66,7 @@ public class EditProfileFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), R.layout.spinner, languages);
         adapter.setDropDownViewResource(R.layout.spinner_drop_item);
         spinner.setAdapter(adapter);
+        spinner.setSelection(Arrays.asList(languages).indexOf(user.getLanguage()));
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

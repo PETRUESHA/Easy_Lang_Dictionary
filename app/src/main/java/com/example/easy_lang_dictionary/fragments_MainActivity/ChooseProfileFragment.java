@@ -37,6 +37,7 @@ public class ChooseProfileFragment extends Fragment {
 
     private FragmentChooseProfileBinding binding;
     private NavController navController;
+    public static RecyclerView recyclerView;
 
     public ChooseProfileFragment() {
     }
@@ -51,7 +52,7 @@ public class ChooseProfileFragment extends Fragment {
         binding = FragmentChooseProfileBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        RecyclerView recyclerView = binding.recyclerView;
+        recyclerView = binding.recyclerView;
         recyclerView.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);

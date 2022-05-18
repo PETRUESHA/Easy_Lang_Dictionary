@@ -13,10 +13,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.easy_lang_dictionary.activities.MainActivity;
 import com.example.easy_lang_dictionary.activities.MainActivity2;
 import com.example.easy_lang_dictionary.R;
+import com.example.easy_lang_dictionary.adapters.ChooseProfileAdapter;
 import com.example.easy_lang_dictionary.databinding.FragmentProfileBinding;
+import com.example.easy_lang_dictionary.fragments_MainActivity.ChooseProfileFragment;
+import com.example.easy_lang_dictionary.room.App;
 import com.example.easy_lang_dictionary.room.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import io.reactivex.Flowable;
 
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding binding;
