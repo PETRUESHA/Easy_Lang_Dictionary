@@ -327,6 +327,7 @@
                     android:id="@+id/radioButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/pastel_red"
                     android:layout_weight="1"
                     android:text="@string/a1"/>
                 <RadioButton
@@ -334,6 +335,7 @@
                     android:id="@+id/radioButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/pastel_red"
                     android:layout_weight="1"
                     android:text="@string/a2"/>
                 <RadioButton
@@ -341,6 +343,7 @@
                     android:id="@+id/radioButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/pastel_red"
                     android:layout_weight="1"
                     android:text="@string/b1"/>
                 <RadioButton
@@ -348,6 +351,7 @@
                     android:id="@+id/radioButton4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/pastel_red"
                     android:layout_weight="1"
                     android:text="@string/b2"/>
                 <RadioButton
@@ -355,6 +359,7 @@
                     android:id="@+id/radioButton5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/pastel_red"
                     android:layout_weight="1"
                     android:text="@string/c1"/>
                 <RadioButton
@@ -362,6 +367,7 @@
                     android:id="@+id/radioButton6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:buttonTint="@color/pastel_red"
                     android:layout_weight="1"
                     android:text="@string/c2"/>
             </RadioGroup>

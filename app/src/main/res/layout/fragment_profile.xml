@@ -293,9 +293,11 @@
         android:layout_marginEnd="1dp"
         android:gravity="center|left"
         android:text="TextView"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@+id/group_34"
         app:layout_constraintEnd_toEndOf="@+id/group_34"
-        app:layout_constraintTop_toTopOf="@+id/group_34" />
+        app:layout_constraintTop_toTopOf="@+id/group_34"
+        tools:ignore="TextViewEdits" />
 
     <TextView
         android:id="@+id/textView32"

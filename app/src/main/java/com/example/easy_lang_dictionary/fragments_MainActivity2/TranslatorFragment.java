@@ -43,6 +43,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -118,7 +119,7 @@ public class TranslatorFragment extends Fragment {
         ArrayAdapter<String> adapter1 = new ArrayAdapter(getContext(), R.layout.spinner, languages);
         adapter1.setDropDownViewResource(R.layout.spinner_drop_item);
         spinner1.setAdapter(adapter1);
-        spinner1.setSelection(0);
+        spinner1.setSelection(Arrays.asList(languages).indexOf(user.getLanguage()));
 
         Spinner spinner2 = binding.spinner4;
         ArrayAdapter<String> adapter2 = new ArrayAdapter(getContext(), R.layout.spinner, languages);

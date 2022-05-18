@@ -340,6 +340,7 @@
             style="@style/r16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:buttonTint="@color/pastel_red"
             android:layout_weight="1"
             android:text="@string/a1" />
 
@@ -348,6 +349,7 @@
             style="@style/r16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:buttonTint="@color/pastel_red"
             android:layout_weight="1"
             android:text="@string/a2" />
 
@@ -356,6 +358,7 @@
             style="@style/r16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:buttonTint="@color/pastel_red"
             android:layout_weight="1"
             android:text="@string/b1" />
 
@@ -364,6 +367,7 @@
             style="@style/r16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:buttonTint="@color/pastel_red"
             android:layout_weight="1"
             android:text="@string/b2" />
 
@@ -372,6 +376,7 @@
             style="@style/r16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:buttonTint="@color/pastel_red"
             android:layout_weight="1"
             android:text="@string/c1" />
 
@@ -380,6 +385,7 @@
             style="@style/r16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:buttonTint="@color/pastel_red"
             android:layout_weight="1"
             android:text="@string/c2" />
     </RadioGroup>
