@@ -172,7 +172,7 @@ public class TranslatorFragment extends Fragment {
         Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).baseUrl(MainActivity2.BASE_URL).build();
         Api api = retrofit.create(Api.class);
 
-        Call<JsonObject> translate = api.getTranslate(text, srcLang, dstLang);
+        Call<JsonObject> translate = api.getTranslate("Bearer " + MainActivity2.token_key, text, srcLang, dstLang);
         translate.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -184,7 +184,7 @@ public class TranslatorFragment extends Fragment {
                     String tr = translation.getTranslation();
                     textViewTranslation.setText(tr);
 
-                    /*Call<String> sound = api.getSound(dictName, soundFileName);
+                    /*Call<String> sound = api.getSound("Bearer " + MainActivity2.token_key, dictName, soundFileName);
                     sound.enqueue(new Callback<String>() {
                         @RequiresApi(api = Build.VERSION_CODES.O)
                         @Override
@@ -214,6 +214,7 @@ public class TranslatorFragment extends Fragment {
                         }
                     }); */
                 } else {
+                    Log.d("RRR", Integer.toString(response.code()));
                     textViewTranslation.setText(R.string.error_messege);
                 }
             }

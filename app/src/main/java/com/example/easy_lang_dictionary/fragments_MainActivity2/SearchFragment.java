@@ -74,7 +74,7 @@ public class SearchFragment extends Fragment {
                     Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).baseUrl(MainActivity2.BASE_URL).build();
                     Api api = retrofit.create(Api.class);
 
-                    Call<JsonObject> req = api.getWordList(prefix, lang_codes.get(user.getLanguage()), lang_codes.get("Russian"), 20);
+                    Call<JsonObject> req = api.getWordList("Bearer " + MainActivity2.token_key, prefix, lang_codes.get(user.getLanguage()), lang_codes.get("Russian"), 20);
                     req.enqueue(new Callback<JsonObject>() {
                         @Override
                         public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
